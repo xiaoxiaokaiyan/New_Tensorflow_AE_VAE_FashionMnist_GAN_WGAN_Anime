@@ -4,11 +4,11 @@
 
 ## Theory
 * AE原理图
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/AE%E5%8E%9F%E7%90%86%E5%9B%BE.png" width = 100% height =100%  div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/AE%E5%8E%9F%E7%90%86%E5%9B%BE.png" width = 50% height =50%  div align=left />
 
 * VAE原理图
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE1.png" width = 100% height = 100%  div align=left />
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE2.png" width = 100%  height =100%  div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE1.png" width = 50%height = 50% div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE2.png" width = 50% height =50% div align=left />
 <br/>
 
 
@@ -33,16 +33,15 @@
 
 ## Visualization Results
 * AE生成结果对比
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/AE%E7%94%9F%E6%88%90%E7%BB%93%E6%9E%9C%E5%AF%B9%E6%AF%94%E5%9B%BE%E7%89%87.png" width = 100% height =100%  div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/AE%E7%94%9F%E6%88%90%E7%BB%93%E6%9E%9C%E5%AF%B9%E6%AF%94%E5%9B%BE%E7%89%87.png" width = 50% height =50%  div align=left />
 
 * VAE随机生成第1代
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/VAE%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E7%AC%AC1%E4%BB%A3%E5%9B%BE%E7%89%87.png" width = 100% height =100%  div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/VAE%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E7%AC%AC1%E4%BB%A3%E5%9B%BE%E7%89%87.png" width = 50% height =50%  div align=left />
 
 * VAE随机生成第9代
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/VAE%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E7%AC%AC9%E4%BB%A3%E5%9B%BE%E7%89%87.png" width = 100% height =100%  div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/VAE%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E7%AC%AC9%E4%BB%A3%E5%9B%BE%E7%89%87.png" width = 50% height =50% div align=left />
 <br/>
-<br/>
-<br/>
+
 
 
 ## Public Datasets:
