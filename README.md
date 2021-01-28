@@ -70,5 +70,6 @@ GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显�
 
 ## References:
 * 深度学习与TensorFlow 2入门实战（完整版）---龙曲良
-* [https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73](https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73) [https://medium.com/@joseph.rocca](Joseph Rocca)
+* [https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73](https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73) &nbsp;
+[https://medium.com/@joseph.rocca](Joseph Rocca)
 
