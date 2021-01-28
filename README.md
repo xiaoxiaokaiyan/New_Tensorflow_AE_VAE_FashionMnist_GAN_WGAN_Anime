@@ -62,7 +62,6 @@
       x_concat1 = tf.reshape(tf.concat([x, x_hat], axis=0),[-1, 28, 28])  ----------------------此处必须重新reshape，才能得到[2b, 28, 28]
 ```   
 &nbsp;
-
 ### 2. 关于VAE和GAN的区别
   * VAE和GAN都是目前来看效果比较好的生成模型，本质区别我觉得这是两种不同的角度，VAE希望通过一种显式(explicit)的方法找到一个概率密度，并通过最小化对数似函数的下限来得到最优解；
 GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显式的概率密度函数。（李飞飞）
@@ -71,8 +70,7 @@ GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显�
   [https://www.zhihu.com/question/317623081](https://www.zhihu.com/question/317623081)
   * 描述的是分布之间的距离而不是样本的距离。[https://blog.csdn.net/Mark_2018/article/details/105400648](https://blog.csdn.net/Mark_2018/article/details/105400648)
 &nbsp;
-
-### 2.tensorflow-gpu版本代码出现numpy错误
+### 3.tensorflow-gpu版本代码出现numpy错误
   * 其中一种解决方法：**pip install --upgrade numpy**
 <br/>
 
