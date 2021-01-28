@@ -14,9 +14,9 @@
 
 
 ## Dependencies:
+* &gt; GeForce GTX 1660TI
 * Windows10
 * python==3.6.12
-* > GeForce GTX 1660TI
 * tensorflow-gpu==2.0.0
 * GPU环境安装包，下载地址：https://pan.baidu.com/s/14Oisbo9cZpP7INQ6T-3vwA 提取码：z4pl （网上找的）
 ```
@@ -52,7 +52,7 @@
 
 
 ## Experience：
-&ensp; ### 1. 代码问题
+<h5>1. 代码问题</h5>
 ```
       # [b, 28, 28] => [b, 28, 28]
       x_concat1 = tf.concat([x, x_hat], axis=0)
@@ -60,14 +60,15 @@
       # [b, 28, 28] => [2b, 28, 28]
       x_concat1 = tf.reshape(tf.concat([x, x_hat], axis=0),[-1, 28, 28])  ---------此处必须重新reshape，才能得到[2b, 28, 28]
 ```   
-&ensp; ### 2. 关于VAE和GAN的区别
+
+### 2. 关于VAE和GAN的区别
   * VAE和GAN都是目前来看效果比较好的生成模型，本质区别我觉得这是两种不同的角度，VAE希望通过一种显式(explicit)的方法找到一个概率密度，并通过最小化对数似函数的下限来得到最优解；
 GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显式的概率密度函数。（李飞飞）
   * 简单来说，GAN和VAE都属于深度生成模型（deep generative models，DGM）而且属于implicit DGM。他们都能够从具有简单分布的随机噪声中生成具有复杂分布的数据（逼近真实数据分布），而两者的本质区别是从不同的视角来看待数据生成的过程，从而构建了不同的loss function作为衡量生成数据好坏的metric度量。
   * 要求得一个生成模型使其生成数据的分布 能够最小化与真实数据分布之间的某种分布差异度量，例如KL散度、JS散度、Wasserstein距离等。采用不同的差异度量会导出不同的loss function，比如KL散度会导出极大似然估计，JS散度会产生最原始GAN里的判别器，Wasserstein距离通过dual form会引入critic。而不同的深度生成模型，具体到GAN、VAE还是flow model，最本质的区别就是从不同的视角来看待数据生成的过程，从而采用不同的数据分布模型来表达。
   [https://www.zhihu.com/question/317623081](https://www.zhihu.com/question/317623081)
   * 描述的是分布之间的距离而不是样本的距离。[https://blog.csdn.net/Mark_2018/article/details/105400648](https://blog.csdn.net/Mark_2018/article/details/105400648)
-&ensp;
+
 ### 3.tensorflow-gpu版本代码出现numpy错误
   * 其中一种解决方法：**pip install --upgrade numpy**
 <br/>
