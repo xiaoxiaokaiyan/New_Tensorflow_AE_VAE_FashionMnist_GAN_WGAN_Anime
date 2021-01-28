@@ -1,14 +1,12 @@
-# 心得：**此代码可以很好地体现残差网络的构建**
-<br/>
-
+# 心得：**AE、VAE、GAN网络的创建**
 
 ## Theory
 * AE原理图
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/AE%E5%8E%9F%E7%90%86%E5%9B%BE.png" width = 100% height =50%  div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/AE%E5%8E%9F%E7%90%86%E5%9B%BE.png" width = 50% height =50%  div align=left />
 
 * VAE原理图
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE1.png" width = 100% height = 50% div align=left />
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE2.png" width = 100% height =50% div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE1.png" width = 50% height = 50% div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE2.png" width = 50% height =50% div align=left />
 &nbsp;
 <br/>
 
@@ -53,7 +51,6 @@
 
 ## Experience：
 ### （1）代码问题
-
 ```
       # [b, 28, 28] => [b, 28, 28]
       x_concat1 = tf.concat([x, x_hat], axis=0)
@@ -68,9 +65,6 @@ GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显�
   * 2.简单来说，GAN和VAE都属于深度生成模型（deep generative models，DGM）而且属于implicit DGM。他们都能够从具有简单分布的随机噪声中生成具有复杂分布的数据（逼近真实数据分布），而两者的本质区别是从不同的视角来看待数据生成的过程，从而构建了不同的loss function作为衡量生成数据好坏的metric度量。
   * 3.要求得一个生成模型使其生成数据的分布 能够最小化与真实数据分布之间的某种分布差异度量，例如KL散度、JS散度、Wasserstein距离等。采用不同的差异度量会导出不同的loss function，比如KL散度会导出极大似然估计，JS散度会产生最原始GAN里的判别器，Wasserstein距离通过dual form会引入critic。而不同的深度生成模型，具体到GAN、VAE还是flow model，最本质的区别就是从不同的视角来看待数据生成的过程，从而采用不同的数据分布模型来表达。 [https://www.zhihu.com/question/317623081](https://www.zhihu.com/question/317623081)
   * 4.描述的是分布之间的距离而不是样本的距离。[https://blog.csdn.net/Mark_2018/article/details/105400648](https://blog.csdn.net/Mark_2018/article/details/105400648)
-
-### （3）tensorflow-gpu版本代码出现numpy错误
-  * 其中一种解决方法：**pip install --upgrade numpy**
 <br/>
 
 
