@@ -4,11 +4,11 @@
 
 ## Theory
 * AE原理图
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/AE%E5%8E%9F%E7%90%86%E5%9B%BE.png" width = 50% height =50%  div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/AE%E5%8E%9F%E7%90%86%E5%9B%BE.png" width = 100% height =50%  div align=left />
 
 * VAE原理图
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE1.png" width = 50%height = 50% div align=left />
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE2.png" width = 50% height =50% div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE1.png" width = 100%height = 50% div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE2.png" width = 100% height =50% div align=left />
 <br/>
 
 
@@ -33,13 +33,13 @@
 
 ## Visualization Results
 * AE生成结果对比
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/AE%E7%94%9F%E6%88%90%E7%BB%93%E6%9E%9C%E5%AF%B9%E6%AF%94%E5%9B%BE%E7%89%87.png" width = 50% height =50%  div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/AE%E7%94%9F%E6%88%90%E7%BB%93%E6%9E%9C%E5%AF%B9%E6%AF%94%E5%9B%BE%E7%89%87.png" width = 100% height =50%  div align=left />
 
 * VAE随机生成第1代
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/VAE%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E7%AC%AC1%E4%BB%A3%E5%9B%BE%E7%89%87.png" width = 50% height =50%  div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/VAE%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E7%AC%AC1%E4%BB%A3%E5%9B%BE%E7%89%87.png" width = 100% height =50%  div align=left />
 
 * VAE随机生成第9代
-<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/VAE%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E7%AC%AC9%E4%BB%A3%E5%9B%BE%E7%89%87.png" width = 50% height =50% div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/VAE%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E7%AC%AC9%E4%BB%A3%E5%9B%BE%E7%89%87.png" width = 100% height =50% div align=left />
 <br/>
 
 
@@ -50,7 +50,7 @@
 
 
 ## Experience：
-### 1. 关于VAE和GAN的区别
+&nbsp ### 1. 关于VAE和GAN的区别
   * VAE和GAN都是目前来看效果比较好的生成模型，本质区别我觉得这是两种不同的角度，VAE希望通过一种显式(explicit)的方法找到一个概率密度，并通过最小化对数似函数的下限来得到最优解；
 GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显式的概率密度函数。（李飞飞）
   * 简单来说，GAN和VAE都属于深度生成模型（deep generative models，DGM）而且属于implicit DGM。他们都能够从具有简单分布的随机噪声中生成具有复杂分布的数据（逼近真实数据分布），而两者的本质区别是从不同的视角来看待数据生成的过程，从而构建了不同的loss function作为衡量生成数据好坏的metric度量。
