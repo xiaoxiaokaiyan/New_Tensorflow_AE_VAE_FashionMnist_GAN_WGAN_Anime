@@ -41,6 +41,8 @@
 * VAE随机生成第9代
 <img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/VAE%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E7%AC%AC9%E4%BB%A3%E5%9B%BE%E7%89%87.png" width = 100% height =100%  div align=left />
 <br/>
+<br/>
+<br/>
 
 
 ## Public Datasets:
