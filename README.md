@@ -1,7 +1,5 @@
 # 心得：**此代码可以很好地体现残差网络的构建**
 <br/>
-<br/>
-<br/>
 
 
 ## Theory
@@ -11,8 +9,6 @@
 * VAE原理图
 <img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE1.png" width = 100% height = 100%  div align=left />
 <img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE2.png" width = 100%  height =100%  div align=left />
-<br/>
-<br/>
 <br/>
 
 
@@ -33,8 +29,6 @@
   torchvision-0.3.0-cp36-cp36m-win_amd64.whl
 ```
 <br/>
-<br/>
-<br/>
 
 
 ## Visualization Results
@@ -47,14 +41,10 @@
 * VAE随机生成第9代
 <img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/VAE%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E7%AC%AC9%E4%BB%A3%E5%9B%BE%E7%89%87.png" width = 100% height =100%  div align=left />
 <br/>
-<br/>
-<br/>
 
 
 ## Public Datasets:
 * fashion_mnist，是一个替代MNIST手写数字集的图像数据集。它是由Zalando（一家德国的时尚科技公司）旗下的研究部门提供。其涵盖了来自10种类别的共7万个不同商品的正面图片。Fashion-MNIST的大小、格式和训练集/测试集划分与原始的MNIST完全一致。60000/10000的训练测试数据划分，28x28的灰度图片。你可以直接用它来测试你的机器学习和深度学习算法性能，且不需要改动任何的代码。
-<br/>
-<br/>
 <br/>
 
 
@@ -82,8 +72,6 @@ GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显�
         
 ### 2.tensorflow-gpu版本代码出现numpy错误
   * 其中一种解决方法：**pip install --upgrade numpy**
-<br/>
-<br/>
 <br/>
 
 
