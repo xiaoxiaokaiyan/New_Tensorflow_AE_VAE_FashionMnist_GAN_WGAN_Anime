@@ -4,13 +4,11 @@
 
 ## Theory
 * AE原理图
-![img1](https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/AE%E5%8E%9F%E7%90%86%E5%9B%BE.png)
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/AE%E5%8E%9F%E7%90%86%E5%9B%BE.png" width = "100" height = "100" div align=left />
 
 * VAE原理图
-<br/>
-![img1](https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE1.png)
-<br/>
-![img1](https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE2.png)
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE1.png" width = "100" height = "100" div align=left />
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE2.png" width = "100" height = "100" div align=left />
 
 
 
