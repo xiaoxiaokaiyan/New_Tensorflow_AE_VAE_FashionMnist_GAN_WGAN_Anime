@@ -1,4 +1,4 @@
-# 心得：**AE、VAE、GAN网络的创建**
+# 心得：**AE、VAE、GAN、WGAN网络的创建**
 
 ## Theory
 * AE原理图
