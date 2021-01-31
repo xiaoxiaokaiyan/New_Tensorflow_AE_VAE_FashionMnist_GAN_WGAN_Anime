@@ -46,9 +46,9 @@
 
 ## Public Datasets:
 * fashion_mnist，是一个替代MNIST手写数字集的图像数据集。它是由Zalando（一家德国的时尚科技公司）旗下的研究部门提供。其涵盖了来自10种类别的共7万个不同商品的正面图片。Fashion-MNIST的大小、格式和训练集/测试集划分与原始的MNIST完全一致。60000/10000的训练测试数据划分，28x28的灰度图片。你可以直接用它来测试你的机器学习和深度学习算法性能，且不需要改动任何的代码。
+* the Anime dataset should be prepared by yourself in ./data/faces/*.jpg
+** dataset link: [https://www.kaggle.com/splcher/animefacedataset](https://www.kaggle.com/splcher/animefacedataset)
 <br/>
-* the Anime dataset should be prepared by yourself in ./data/faces/*.jpg，dataset link: [https://www.kaggle.com/splcher/animefacedataset](https://www.kaggle.com/splcher/animefacedataset)
-
 
 ## Experience：
 ### （1）代码问题
