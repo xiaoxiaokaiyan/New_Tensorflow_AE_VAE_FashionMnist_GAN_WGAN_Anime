@@ -8,6 +8,9 @@
 <img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE1.png" width = 100% height = 50% div align=left />
 <img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/VAE%E5%8E%9F%E7%90%86%E5%9B%BE2.png" width = 100% height =50% div align=left />
 
+* GAN-Loss
+<img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_FashionMnist_GAN_WGAN_Anime/blob/master/theory/WGAN-Gradient%20Penalty.PNG" width = 100% height =50% div align=left />
+
 * WGAN-Gradient-Penalty
 <img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_FashionMnist_GAN_WGAN_Anime/blob/master/theory/WGAN-Gradient%20Penalty.PNG" width = 100% height =50% div align=left />
 
@@ -104,6 +107,7 @@ GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显�
             logits = self.fc(x)
 
             return logits
+            
     class Generator(keras.Model):
 
         def __init__(self):
@@ -134,12 +138,11 @@ GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显�
 
             return x
 
-
     def celoss_ones(logits):
         # [b, 1]
         # [b] = [1, 1, 1, 1,]
         loss = tf.nn.sigmoid_cross_entropy_with_logits(logits=logits,                #logits经sigmoid函数激活之后的交叉熵
-                                      labels=tf.ones_like(logits)) #该操作返回一个具有和给定logits相同形状（shape）和相同数据类型（dtype），但是所有的元素都被设置为1的tensor
+                                      labels=tf.ones_like(logits))        #该操作返回一个具有和给定logits相同形状（shape）和相同数据类型（dtype），但是所有的元素都被设置为1的tensor
 
         return tf.reduce_mean(loss)
     
@@ -148,7 +151,7 @@ GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显�
         # [b, 1]
         # [b] = [1, 1, 1, 1,]
         loss = tf.nn.sigmoid_cross_entropy_with_logits(logits=logits,
-                                      labels=tf.zeros_like(logits))  #该操作返回一个具有和给定logits相同形状（shape）和相同数据类型（dtype），但是所有的元素都被设置为0的tensor
+                                      labels=tf.zeros_like(logits))      #该操作返回一个具有和给定logits相同形状（shape）和相同数据类型（dtype），但是所有的元素都被设置为0的tensor
         return tf.reduce_mean(loss)
     
     
@@ -174,6 +177,8 @@ GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显�
 
         return loss
 ```
+### （4）WGAN的核心代码（对GAN）
+
 ```
     def gradient_penalty(discriminator, batch_x, fake_image):
 
