@@ -67,7 +67,7 @@
       x_concat1 = tf.concat([x, x_hat], axis=0)
 
       # [b, 28, 28] => [2b, 28, 28]
-      x_concat1 = tf.reshape(tf.concat([x, x_hat], axis=0),[-1, 28, 28])  ---------此处必须重新reshape，才能得到[2b, 28, 28]
+      x_concat1 = tf.reshape(tf.concat([x, x_hat], axis=0),[-1, 28, 28])  ---------此处必须重新reshape，才能得到[2b, 28, 28]，才能生成Visualization Results第一幅图
 ```   
 
 ### （2）关于VAE和GAN的区别
@@ -176,7 +176,7 @@ GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显�
         d_loss_real = celoss_ones(d_real_logits)
         d_loss_fake = celoss_zeros(d_fake_logits)
 
-        loss = d_loss_fake + d_loss_real                    --------------------------------------------------GAN loss
+        loss = d_loss_fake + d_loss_real                    -----------------------------GAN loss
 
         return loss
 ```
@@ -217,7 +217,7 @@ GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显�
         d_loss_fake = celoss_zeros(d_fake_logits)
         gp = gradient_penalty(discriminator, batch_x, fake_image)                #wgan较gan的不同之处，gp
 
-        loss = d_loss_fake + d_loss_real + 1. * gp              --------------------------------------------------WGAN loss
+        loss = d_loss_fake + d_loss_real + 1. * gp              ---------------------------------WGAN loss
 
         return loss, gp
 
