@@ -70,6 +70,150 @@ GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显�
   * 2.简单来说，GAN和VAE都属于深度生成模型（deep generative models，DGM）而且属于implicit DGM。他们都能够从具有简单分布的随机噪声中生成具有复杂分布的数据（逼近真实数据分布），而两者的本质区别是从不同的视角来看待数据生成的过程，从而构建了不同的loss function作为衡量生成数据好坏的metric度量。
   * 3.要求得一个生成模型使其生成数据的分布 能够最小化与真实数据分布之间的某种分布差异度量，例如KL散度、JS散度、Wasserstein距离等。采用不同的差异度量会导出不同的loss function，比如KL散度会导出极大似然估计，JS散度会产生最原始GAN里的判别器，Wasserstein距离通过dual form会引入critic。而不同的深度生成模型，具体到GAN、VAE还是flow model，最本质的区别就是从不同的视角来看待数据生成的过程，从而采用不同的数据分布模型来表达。 [https://www.zhihu.com/question/317623081](https://www.zhihu.com/question/317623081)
   * 4.描述的是分布之间的距离而不是样本的距离。[https://blog.csdn.net/Mark_2018/article/details/105400648](https://blog.csdn.net/Mark_2018/article/details/105400648)
+
+### （3）GAN的核心代码
+```
+    class Discriminator(keras.Model):
+
+        def __init__(self):
+            super(Discriminator, self).__init__()
+
+            # [b, 64, 64, 3] => [b, 1]
+            self.conv1 = layers.Conv2D(64, 5, 3, 'valid')
+
+            self.conv2 = layers.Conv2D(128, 5, 3, 'valid')
+            self.bn2 = layers.BatchNormalization()
+
+            self.conv3 = layers.Conv2D(256, 5, 3, 'valid')
+            self.bn3 = layers.BatchNormalization()
+
+            # [b, h, w ,c] => [b, -1]
+            self.flatten = layers.Flatten()
+            self.fc = layers.Dense(1)
+
+
+        def call(self, inputs, training=None):
+
+            x = tf.nn.leaky_relu(self.conv1(inputs))
+            x = tf.nn.leaky_relu(self.bn2(self.conv2(x), training=training))
+            x = tf.nn.leaky_relu(self.bn3(self.conv3(x), training=training))
+
+            # [b, h, w, c] => [b, -1]
+            x = self.flatten(x)
+            # [b, -1] => [b, 1]
+            logits = self.fc(x)
+
+            return logits
+    class Generator(keras.Model):
+
+        def __init__(self):
+            super(Generator, self).__init__()
+
+            # z: [b, 100] => [b, 3*3*512] => [b, 3, 3, 512] => [b, 64, 64, 3]
+            self.fc = layers.Dense(3*3*512)
+
+            self.conv1 = layers.Conv2DTranspose(256, 3, 3, 'valid')
+            self.bn1 = layers.BatchNormalization()
+
+            self.conv2 = layers.Conv2DTranspose(128, 5, 2, 'valid')
+            self.bn2 = layers.BatchNormalization()
+
+            self.conv3 = layers.Conv2DTranspose(3, 4, 3, 'valid')
+
+        def call(self, inputs, training=None):
+            # [z, 100] => [z, 3*3*512]
+            x = self.fc(inputs)
+            x = tf.reshape(x, [-1, 3, 3, 512])
+            x = tf.nn.leaky_relu(x)
+
+            #
+            x = tf.nn.leaky_relu(self.bn1(self.conv1(x), training=training))
+            x = tf.nn.leaky_relu(self.bn2(self.conv2(x), training=training))
+            x = self.conv3(x)
+            x = tf.tanh(x)
+
+            return x
+
+
+    def celoss_ones(logits):
+        # [b, 1]
+        # [b] = [1, 1, 1, 1,]
+        loss = tf.nn.sigmoid_cross_entropy_with_logits(logits=logits,                #logits经sigmoid函数激活之后的交叉熵
+                                      labels=tf.ones_like(logits)) #该操作返回一个具有和给定logits相同形状（shape）和相同数据类型（dtype），但是所有的元素都被设置为1的tensor
+
+        return tf.reduce_mean(loss)
+    
+    
+    def celoss_zeros(logits):
+        # [b, 1]
+        # [b] = [1, 1, 1, 1,]
+        loss = tf.nn.sigmoid_cross_entropy_with_logits(logits=logits,
+                                      labels=tf.zeros_like(logits))  #该操作返回一个具有和给定logits相同形状（shape）和相同数据类型（dtype），但是所有的元素都被设置为0的tensor
+        return tf.reduce_mean(loss)
+    
+    
+    def g_loss_fn(generator, discriminator, batch_z, is_training):
+
+        fake_image = generator(batch_z, is_training)
+        d_fake_logits = discriminator(fake_image, is_training)
+        loss = celoss_ones(d_fake_logits)
+
+        return loss
+    
+    def d_loss_fn(generator, discriminator, batch_z, batch_x, is_training):
+        # 1. treat real image as real
+        # 2. treat generated image as fake
+        fake_image = generator(batch_z, is_training)
+        d_fake_logits = discriminator(fake_image, is_training)
+        d_real_logits = discriminator(batch_x, is_training)
+
+        d_loss_real = celoss_ones(d_real_logits)
+        d_loss_fake = celoss_zeros(d_fake_logits)
+
+        loss = d_loss_fake + d_loss_real                    --------------------------------------------------GAN loss
+
+        return loss
+```
+```
+    def gradient_penalty(discriminator, batch_x, fake_image):
+
+        batchsz = batch_x.shape[0]
+
+        # [b, h, w, c]
+        t = tf.random.uniform([batchsz, 1, 1, 1])
+        # [b, 1, 1, 1] => [b, h, w, c]
+        t = tf.broadcast_to(t, batch_x.shape)
+
+        interplate = t * batch_x + (1 - t) * fake_image                             #gp部分公式
+
+        with tf.GradientTape() as tape:
+            tape.watch([interplate])                                                #gp部分公式
+            d_interplote_logits = discriminator(interplate)
+        grads = tape.gradient(d_interplote_logits, interplate)
+
+        # grads:[b, h, w, c] => [b, -1]
+        grads = tf.reshape(grads, [grads.shape[0], -1])                             #gp部分公式
+        gp = tf.norm(grads, axis=1) #[b]
+        gp = tf.reduce_mean( (gp-1)**2 )
+
+        return gp
+    
+    def d_loss_fn(generator, discriminator, batch_z, batch_x, is_training):
+        # 1. treat real image as real
+        # 2. treat generated image as fake
+        fake_image = generator(batch_z, is_training)
+        d_fake_logits = discriminator(fake_image, is_training)
+        d_real_logits = discriminator(batch_x, is_training)
+
+        d_loss_real = celoss_ones(d_real_logits)
+        d_loss_fake = celoss_zeros(d_fake_logits)
+        gp = gradient_penalty(discriminator, batch_x, fake_image)                #wgan较gan的不同之处，gp
+
+        loss = d_loss_fake + d_loss_real + 1. * gp              --------------------------------------------------WGAN loss
+
+        return loss, gp
+
+```
 <br/>
 
 
