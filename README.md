@@ -48,7 +48,7 @@
 * VAE随机生成第9代
 <img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/result/VAE%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E7%AC%AC9%E4%BB%A3%E5%9B%BE%E7%89%87.png" width = 50% height =50% div align=center />
 
-* WGAN生成第19700代
+* WGAN生成第19700代（19800代开始，g-loss从1渐渐变成4，且稳定在4，生成的图片模糊，这个问题未解决）
 <img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_FashionMnist_GAN_WGAN_Anime/blob/master/result/wgan-19700.png" width = 50% height =50% div align=center />
 &nbsp;
 <br/>
