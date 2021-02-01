@@ -1,5 +1,9 @@
 # 心得：**AE、VAE、GAN、WGAN网络的创建**
 
+## News
+* this code 
+* [PyTorch Version](https://github.com/xiaoxiaokaiyan/New_Pytorch_WGAN_Celeba_Oxford102flowers_Anime)
+
 ## Theory
 * AE原理图
 <img src="https://github.com/xiaoxiaokaiyan/New_Tensorflow_AE_VAE_GAN_FashionMnist/blob/master/theory/AE%E5%8E%9F%E7%90%86%E5%9B%BE.png" width = 100% height =50%  div align=left />
@@ -229,5 +233,6 @@ GAN则是对抗的方式来寻找一种平衡，不需要认为给定一个显�
 * [深度学习与TensorFlow 2入门实战（完整版）](https://www.bilibili.com/video/BV1HV411q7xD?from=search&seid=14089320887830328110)---龙曲良
 * [https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73](https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73) ---[Joseph Rocca](https://medium.com/@joseph.rocca)
 * [https://zhuanlan.zhihu.com/p/24767059](https://zhuanlan.zhihu.com/p/24767059)
-* [https://github.com/hindupuravinash/the-gan-zoo](https://github.com/hindupuravinash/the-gan-zoo)
+* [更多GAN变种的实现：https://github.com/LynnHo/DCGAN-LSGAN-WGAN-GP-DRAGAN-Tensorflow-2](https://github.com/LynnHo/DCGAN-LSGAN-WGAN-GP-DRAGAN-Tensorflow-2)
+* [更多GAN变种的论文：https://github.com/hindupuravinash/the-gan-zoo](https://github.com/hindupuravinash/the-gan-zoo)
 * [https://reiinakano.github.io/gan-playground/在线构建GAN](https://reiinakano.github.io/gan-playground/)
