@@ -4,6 +4,7 @@
 * this code 
 * [PyTorch Version](https://github.com/xiaoxiaokaiyan/New_Pytorch_WGAN_Celeba_Oxford102flowers_Anime)
 * [WGAN_DCGAN_LSGAN_WGANGP Pytorch 单独版本](https://github.com/xiaoxiaokaiyan/New_Pytorch_WGAN_DCGAN_LSGAN_CycleGAN_FastNeuralTransfer)
+* [更多GAN版本的实现：https://github.com/eriklindernoren/Keras-GAN](https://github.com/eriklindernoren/Keras-GAN)
 
 ## Theory
 * AE原理图
