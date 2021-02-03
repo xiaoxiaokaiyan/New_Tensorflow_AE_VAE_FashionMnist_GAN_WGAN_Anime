@@ -3,6 +3,7 @@
 ## News
 * this code 
 * [PyTorch Version](https://github.com/xiaoxiaokaiyan/New_Pytorch_WGAN_Celeba_Oxford102flowers_Anime)
+* [WGAN_DCGAN_LSGAN_WGANGP Pytorch 单独版本](https://github.com/xiaoxiaokaiyan/New_Pytorch_WGAN_DCGAN_LSGAN_CycleGAN_FastNeuralTransfer)
 
 ## Theory
 * AE原理图
